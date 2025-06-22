@@ -10,9 +10,9 @@ document.addEventListener('keyup', onKeyPress);
 button.addEventListener('click', toggleFormat);
 copy.addEventListener('click', copyToClipboard);
 
-function onKeyPress(e) {
+async function onKeyPress(e) {
     copy.innerText = 'Copy';
-    var ann = readMarkdown(input.value);
+    var ann = await readMarkdown(input.value);
     if (formatToggle) {
         output.value = JSON.stringify(ann, 0, 3);
     }
@@ -34,7 +34,7 @@ function copyToClipboard(e) {
 } 
 
 
-function readMarkdown(str) {
+async function readMarkdown(str) {
     var lines = str.split('\n');
     var title = "Release <version>";
     var desc = "Check out the new release, ClickCrystals v<version>!";
@@ -75,15 +75,26 @@ function readMarkdown(str) {
     if (currentField != null)
         fields.push(currentField);
 
-    return new Ann(title, desc, fields);
+    var order = await fetchNewOrder()
+    return new Ann(order, title, desc, fields);
+}
+
+
+async function fetchNewOrder() {
+    var headers = { method: 'GET' }
+    var res = await fetch('https://itzispyder.github.io/clickcrystals/bulletin.json', headers);
+    var json = await res.json();
+    return json.announcements.length;
 }
 
 class Ann {
+    order
     title
     desc
     fields
 
-    constructor(title, desc, fields) {
+    constructor(order, title, desc, fields) {
+        this.order = order;
         this.title = title;
         this.desc = desc;
         this.fields = fields;
