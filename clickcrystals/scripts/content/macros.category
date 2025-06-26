@@ -240,3 +240,51 @@ on right_click {
         wait 0.02 input use
     }
 }
+```
+
+```
+// @itzispyder
+def module custom-elytra-switch
+def desc "Equip elytra automatically when double jumping while holding a firework"
+
+// auto disable elytra when not in use
+on tick if playing if on_ground {
+    !if holding #firework,#chestplate if equipment_has :elytra if hotbar_has #chestplate {
+        func disableElytra
+    }
+}
+
+// auto activate elytra
+on key_press space if playing !if on_ground {
+    if holding #firework !if input_active forward {
+        if equipment_has :elytra func useElytra // if elytra already equipped
+        if hotbar_has :elytra func switchElytra // if elytra not already equipped
+    }
+
+    // auto activate elytra when jumping while falling
+    !if holding #firework if hotbar_has :elytra if block ~ ~-1 ~ :air if block ~ ~-2 ~ :air {
+        switch :elytra
+        input use
+        switch back
+    }
+}
+
+def func useElytra {
+    wait 0.05 input use
+}
+
+def func switchElytra {
+    switch :elytra
+    input use
+    execute_period 0.05 {
+        switch back
+        input use
+    }
+}
+
+def func disableElytra {
+    switch #chestplate
+    input use
+    switch back
+}
+```
