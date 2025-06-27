@@ -1,10 +1,19 @@
 body {
+
+
+
+    /* color variables do not delete */
+    --main-background-color: rgb(26, 26, 26);
+    --nav-background-color: rgba(140, 217, 245, 0.634);
+
+
+
+
     margin: 0;
     padding: 0;
 
-    background-image: url('../assets/background.png');
     background-size: cover;
-    background-color: black;
+    background-color: var(--main-background-color);
     backdrop-filter: blur(10px);
     color: white;
 
@@ -13,21 +22,21 @@ body {
 
 nav {
     background-color: rgb(51, 51, 51);
-    border-bottom: 1px white solid;
     color: white;
 }
 nav h1 {
     padding-top: 20px;
     padding-left: 20px;
-    margin: 0;
+    margin: auto;
+    width: fit-content;
 }
 nav .links {
-    margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
     padding-left: 20px;
     margin-top: 15px;
-    background-color: rgba(140, 217, 245, 0.634);
+    background-color: var(--nav-background-color);
 }
 nav .links a {
     color: white;
@@ -44,24 +53,33 @@ nav .links a:hover {
     width: 100%;
     size: 100%;
     margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .container .category {
     margin: 10px;
+    width: 240px;
+    overflow-x: hidden;
+
     padding: 20px;
-    width: fit-content;
-    background-color: rgba(142, 231, 255, 0.352);
-    border: 1px aqua solid;
-    box-shadow: 0 0 10px aqua;
-    border-radius: 5px;
+    background-color: rgba(81, 81, 81, 0.352);
+    box-shadow: 10px 10px 0 var(--nav-background-color);
     display: inline-block;
     vertical-align: top;
 }
 .container .category #name {
     margin: 0;
+    padding: 0;
 }
 
 #bookmarks {
-    margin-top: 10px;   
+    margin-top: 10px;
+    
+    /* this part is to make it scrollable */
+    height: 250px;
+    overflow-y: scroll;
+
+    /* for links */
+    font-size: 13px;
 }
 .bookmark {
     padding-left: 10px;
@@ -72,15 +90,16 @@ nav .links a:hover {
     background-color: rgba(255, 247, 236, 0.277);
     box-shadow: 0 0 10px black;
     border-radius: 5px;
-    padding: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 5px;
     transition: ease-in-out 200ms;
 }
 .bookmark a {
     color: white;
-    font-family: sans-serif;
     padding-right: 50px;
+    text-decoration: none;
+    transition: ease-in-out;
+}
+.bookmark a:hover {
+    color: aqua;
+    font-size: 20px;
 }
 
