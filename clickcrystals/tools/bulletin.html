@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClickCrystals | Bulletin</title>
-    <link rel="stylesheet" href="./bulletin/css/gen.css">
+    <link rel="stylesheet" href="./bulletin/css/bulletin.css">
     <link rel="shortcut icon" href="../assets/clickcrystals.png" type="image/x-icon">
 </head>
 <body class="main">
     <script src="../../common/toolsbg.js"></script>
-    <textarea name="output" id="output" cols="30" rows="5"></textarea>
 
-    <div class="intro">
-        <h1 class="title">ClickCrystals Announcements Json Generator</h1>
-        <h4 class="desc">Create announcements for ClickCrystals' Click GUI, faster and easier.</h4>
-    </div>
-    <div class="ann">
-        <span class="field_new">+</span>
-        <h3 class="header">Announcement Header</h3>
-        <textarea name="ann-title" id="ann-title" cols="20" rows="1">Announcement Title</textarea>
-        <textarea name="ann-desc" id="ann-desc" cols="20" rows="2">Announcement Description</textarea>
-    </div>
-    <div class="fields">
-        <div id="field_1" class="field">
-            <span class="field_new">+</span>
-            <span class="field_remove">x</span>
-            <h3 class="header">Field</h3>
-            <textarea name="field-title" id="field-title" cols="20" rows="1">Field Title</textarea>
-            <textarea name="field-desc" id="field-desc" cols="20" rows="5">Field Description</textarea>
+    <h1>ClickCrystals Bulletin Generator</h1>
+    <div class="textareas">
+        <div class="text">
+            <h3>Input: Markdown</h3>
+            <textarea name="" id="input"></textarea>
+        </div>
+        <div class="text">
+            <h3>Output: JSON</h3>
+            <textarea name="" id="output"></textarea>
+            <br>
+            <button id="format-button">Beautify</button>
+            <button id="copy-button">Copy</button>
         </div>
     </div>
 </body>
-<script src="./bulletin/js/gen.js"></script>
+<script src="./bulletin/js/bulletin.js"></script>
 </html>
