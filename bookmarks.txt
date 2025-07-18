@@ -71,7 +71,10 @@ File Sharing:
     Email: https://mail.google.com/
     YouTube: https://youtube.com/
 
-
+Web Development:
+    Markdown Renderer CSS DARK: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-dark.min.css
+    Markdown Renderer CSS LIGHT: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css
+    Markdown Renderer JS: https://cdn.jsdelivr.net/npm/marked/marked.min.js
 
 
 

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickCrystals Github Releases</title>
+  <link rel="shortcut icon" href="./clickcrystals/assets/clickcrystals.png" type="image/x-icon">
+
+  <!-- Markdown Library CSS LIGHT -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css">
+</head>
+
+<style>
+  body{
+    margin: 0;
+  }
+
+  .markdown-body {
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 1000px;
+    box-shadow: rgb(85, 85, 85) 0 0 500px;
+  }
+</style>
+
+<body>
+  <div id="content" class="markdown-body">Markdown failed to load :[</div>
+</body>
+
+<!-- Markdown Library JS -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  const markdownBody = document.getElementById('content')
+  const GITHUB = 'https://api.github.com/repos/clickcrystals-development/ClickCrystals/releases?per_page=100'
+  var md = ''
+  var total_download_count = 0;
+
+  md += format('\n # <img src="%s" width=50px> [ClickCrystals (CC)](%s)', './clickcrystals/assets/clickcrystals.png', 'https://github.com/itzispyder/clickcrystals');
+  md += '\n## Your Ultimate CPvP Assistance';
+  md += '\n'
+  md += '\n![Modrinth Downloads](https://img.shields.io/modrinth/dt/clickcrystals?label=Modrinth&color=04b54b)';
+  md += '\n![CurseForge Downloads](https://img.shields.io/curseforge/dt/946253?label=CurseForge&color=orange)';
+  md += '\n![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/itzispyder/clickcrystals/total?label=GitHub&color=blue)  ';
+  md += '\n![PlanetMinecraft Downloads](https://img.shields.io/badge/PlanetMC-8.2k-brightgreen)';
+  md += '\n![Discord](https://img.shields.io/discord/1095079504516493404?label=Discord&color=b434eb)';
+
+  (async function() { // main function
+    var releases = await fetchGithub(1)
+    console.log(releases)
+
+    md += '\n<br><br>'
+    for (var i = 0; i < releases.length; i++) {
+      var release = releases[i]
+      proccessRelease(release)
+    }
+    
+    markdownBody.innerHTML = marked.parse(md.replace('<total_download_count>', total_download_count))
+  })()
+
+  function proccessRelease(release) {
+    md += format('\n\n- ## [%s](%s)', release.name, release.html_url);
+    md += format('\n  *Created: %s*<br>', new Date(release.published_at));
+    md += format('\n  *By: [%s](%s)*', release.author.login, release.author.html_url);
+    md += '\n'
+
+    var bodyLines = release.body.split('\n')
+    for (var i = 0; i < bodyLines.length; i++) {
+      md += '\n    ' + bodyLines[i];
+    }
+
+    md += '\n     | Asset | Downloads |'
+    md += '\n     |:---:|:---:|'
+
+    for (var i = 0; i < release.assets.length; i++) {
+      var asset = release.assets[i]
+      md += format('\n     | [%s](%s) | %s |', asset.name, asset.browser_download_url, asset.download_count)
+      total_download_count += asset.download_count
+    }
+  }
+
+  function format(string, ...args) {
+    for (var i = 0; i < args.length; i++) {
+      string = string.replace('%s', args[i])
+    }
+    return string
+  }
+
+  async function fetchGithub(pageNumber) {
+    var response = await fetch(GITHUB + '&page=' + pageNumber)
+    var content = await response.json()
+    var fetchAgain = content.length == 100
+    var releases = []
+
+    for (var i = 0; i < content.length; i++) {
+      releases.push(content[i])
+    }
+
+    if (fetchAgain) 
+      releases.push(...await getGitHubInternal(pageNumber + 1))
+    return releases;
+  }
+</script>
+</html>
