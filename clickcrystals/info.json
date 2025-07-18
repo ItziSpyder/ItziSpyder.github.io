@@ -1,9 +1,11 @@
 {
-  "latest": "1.3.2",
-  "motd": "Minor changes. Tweaked modules and added new script syntax.",
+  "latest": "1.3.3",
+  "motd": "Now supporting 1.21.6, 1.21.7, and 1.21.8!",
 
   "versionMappings": {
-    "1.21.6": null,
+    "1.21.8": "1.21.6",
+    "1.21.7": "1.21.6",
+    "1.21.6": "1.21.6",
     "1.21.5": "1.21.5",
     "1.21.4": null,
     "1.21.3": null,
