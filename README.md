@@ -26,7 +26,14 @@
 main()
 
 async function main() {
+    // enum lists
+    console.log(await ClickCrystals.SCRIPTING.requestConditionals())
+    console.log(await ClickCrystals.SCRIPTING.requestEvents())
     console.log(await ClickCrystals.SCRIPTING.requestInputs())
+    console.log(await ClickCrystals.SCRIPTING.requestEntityTargets())
+    console.log(await ClickCrystals.SCRIPTING.requestPackets())
+
+    // info json
     console.log(ClickCrystals.INFO)
     console.log(ClickCrystals.INFO.versionMappings)
     console.log(ClickCrystals.INFO.latest)
