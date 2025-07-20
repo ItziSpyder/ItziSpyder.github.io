@@ -1,70 +1,33 @@
 {
   "hasPlayedBefore": true,
   "overviewMode": false,
+  "disableCustomLoading": false,
+  "disableModuleToggleBroadcast": false,
+  "modMenuIntegration": false,
+  "devMode": false,
   "keybindEntries": {
     "module-toggle-keybind": 256,
-    "message-resend-keybind": 265,
-    "zoom-key": 67,
-    "open-hud-editor-screen": 59,
     "open-clickcrystals-module-screen": 344,
-    "command-prefix": 44
+    "command-prefix": 44,
+    "zoom-key": 67,
+    "message-resend-keybind": 265,
+    "open-hud-editor-screen": 59,
+    "activate-module-bind": 71
   },
   "positionEntries": {
-    "color-overlay-hud": {
+    "pos-hud": {
       "x": 0,
       "y": 0,
-      "width": 0,
-      "height": 0
-    },
-    "fps-hud": {
-      "x": 350,
-      "y": 0,
-      "width": 39,
+      "width": 54,
       "height": 16
     },
     "crosshair-hud": {
       "x": 10,
       "y": 165,
-      "width": 60,
+      "width": 120,
       "height": 16
     },
-    "clock-hud": {
-      "x": 432,
-      "y": 0,
-      "width": 48,
-      "height": 16
-    },
-    "crystal-speed-hud": {
-      "x": 0,
-      "y": 0,
-      "width": 0,
-      "height": 0
-    },
-    "direction-hud": {
-      "x": 10,
-      "y": 150,
-      "width": 66,
-      "height": 16
-    },
-    "resource-hud": {
-      "x": 460,
-      "y": 61,
-      "width": 20,
-      "height": 94
-    },
-    "ping-hud": {
-      "x": 393,
-      "y": 0,
-      "width": 34,
-      "height": 16
-    },
-    "biome-hud": {
-      "x": 10,
-      "y": 135,
-      "width": 72,
-      "height": 16
-    },
-    "armor-hud": {
+    "color-overlay-hud": {
       "x": 0,
       "y": 0,
       "width": 0,
@@ -76,22 +39,76 @@
       "width": 0,
       "height": 0
     },
+    "rotation-hud": {
+      "x": 10,
+      "y": 179,
+      "width": 120,
+      "height": 16
+    },
+    "ping-hud": {
+      "x": 612,
+      "y": 297,
+      "width": 28,
+      "height": 16
+    },
+    "resource-hud": {
+      "x": 620,
+      "y": 82,
+      "width": 20,
+      "height": 94
+    },
+    "armor-hud": {
+      "x": 333,
+      "y": 270,
+      "width": 80,
+      "height": 20
+    },
+    "cps-hud": {
+      "x": 0,
+      "y": 315,
+      "width": 45,
+      "height": 16
+    },
     "module-list-text-hud": {
       "x": 0,
       "y": 0,
       "width": 0,
       "height": 0
     },
-    "entity-indicator-hud": {
+    "biome-hud": {
+      "x": 10,
+      "y": 135,
+      "width": 120,
+      "height": 16
+    },
+    "fps-hud": {
+      "x": 552,
+      "y": 315,
+      "width": 45,
+      "height": 16
+    },
+    "crystal-speed-hud": {
       "x": 0,
       "y": 0,
       "width": 0,
       "height": 0
     },
-    "cps-hud": {
-      "x": 290,
-      "y": 214,
-      "width": 45,
+    "clock-hud": {
+      "x": 598,
+      "y": 315,
+      "width": 48,
+      "height": 16
+    },
+    "target-hud": {
+      "x": 520,
+      "y": 15,
+      "width": 120,
+      "height": 59
+    },
+    "direction-hud": {
+      "x": 10,
+      "y": 150,
+      "width": 120,
       "height": 16
     },
     "icon-hud": {
@@ -100,23 +117,11 @@
       "width": 120,
       "height": 30
     },
-    "pos-hud": {
+    "entity-indicator-hud": {
       "x": 0,
       "y": 0,
-      "width": 84,
-      "height": 16
-    },
-    "rotation-hud": {
-      "x": 10,
-      "y": 179,
-      "width": 96,
-      "height": 16
-    },
-    "target-hud": {
-      "x": 360,
-      "y": 14,
-      "width": 120,
-      "height": 59
+      "width": 0,
+      "height": 0
     }
   },
   "overviewScreenEntries": {
@@ -302,6 +307,27 @@
       },
       "stringEntries": {}
     },
+    "auto-disconnect": {
+      "id": "auto-disconnect",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "Player Health Percentage": 6.0,
+        "Range": 5.0
+      },
+      "booleanEntries": {
+        "Check Anchors": true,
+        "Check Loaded Anchors": true,
+        "Auto Disable": true,
+        "module-game-join-disable": false,
+        "module-enabled": false,
+        "Check New Players": false,
+        "Check Crystals": true
+      },
+      "stringEntries": {}
+    },
     "self-glow": {
       "id": "self-glow",
       "objectEntries": {},
@@ -345,10 +371,12 @@
       },
       "booleanEntries": {
         "render-cps-hud": true,
+        "show-nether-coords-in-overworld": false,
         "module-game-join-disable": false,
         "render-resource-hud": true,
         "module-enabled": true,
         "render-icon-hud": false,
+        "render-armor-hud": true,
         "render-clock-hud": true,
         "render-crosshair-hud": false,
         "render-biome-hud": false,
@@ -390,25 +418,21 @@
       },
       "stringEntries": {}
     },
-    "health-tags": {
-      "id": "health-tags",
+    "inv-packet-sniffer": {
+      "id": "inv-packet-sniffer",
       "objectEntries": {},
       "integerEntries": {
         "module-toggle-keybind": 256
       },
       "doubleEntries": {},
       "booleanEntries": {
-        "no-npc": true,
-        "scale-with-distance": false,
         "module-game-join-disable": false,
-        "only-players": true,
-        "module-enabled": true,
-        "no-unliving": true
+        "module-enabled": false
       },
       "stringEntries": {}
     },
-    "inv-packet-sniffer": {
-      "id": "inv-packet-sniffer",
+    "mcpe-block-placement": {
+      "id": "mcpe-block-placement",
       "objectEntries": {},
       "integerEntries": {
         "module-toggle-keybind": 256
@@ -546,6 +570,83 @@
         "cursor-action": "HOVER_TOTEM"
       }
     },
+    "auto-replenish": {
+      "id": "auto-replenish",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "replenish-percentage": 0.01
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {}
+    },
+    "auto-clicker": {
+      "id": "auto-clicker",
+      "objectEntries": {},
+      "integerEntries": {
+        "right-cps": 10,
+        "module-toggle-keybind": 256,
+        "left-cps": 10
+      },
+      "doubleEntries": {
+        "max-attack-cooldown": 0.0,
+        "left-chance": 1.0,
+        "right-chance": 1.0
+      },
+      "booleanEntries": {
+        "stop-when-damage": false,
+        "right-only-hold": true,
+        "no-babies": true,
+        "debug": false,
+        "stop-when-move": false,
+        "module-game-join-disable": false,
+        "module-enabled": false,
+        "right": false,
+        "left-only-hold": true,
+        "right-spam": true,
+        "left": false,
+        "left-spam": true,
+        "only-when-target": false,
+        "stop-when-target": false
+      },
+      "stringEntries": {}
+    },
+    "no-scrolling": {
+      "id": "no-scrolling",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "disable-scrolling-entirely": false,
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "team-detector": {
+      "id": "team-detector",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "cancel-ccs": true,
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "manual-team-players": "",
+        "team-detection-mode": "COLOR_NAME"
+      }
+    },
     "no-interactions": {
       "id": "no-interactions",
       "objectEntries": {},
@@ -564,21 +665,6 @@
         "allow-shulker": false
       },
       "stringEntries": {}
-    },
-    "armor-hud": {
-      "id": "armor-hud",
-      "objectEntries": {},
-      "integerEntries": {
-        "module-toggle-keybind": 256
-      },
-      "doubleEntries": {},
-      "booleanEntries": {
-        "module-game-join-disable": false,
-        "module-enabled": false
-      },
-      "stringEntries": {
-        "hand-option": "MAIN_HAND"
-      }
     },
     "auto-gg": {
       "id": "auto-gg",
@@ -675,8 +761,8 @@
       },
       "stringEntries": {
         "own-pop-name": "\u00266\u0026nYou",
-        "enemy-death-message": "\u00267\u0026n%player% \u00268\u0026o died after popping \u00267\u0026o(\u0026e%pops%\u00267\u0026o) \u00268totems!",
-        "enemy-pop-message": "\u00267\u0026n%player% \u00268\u0026o popped \u00267\u0026o(\u0026e%pops%\u00267\u0026o) \u00268totems!"
+        "enemy-death-message": "\u00268\u0026oThe player \u00264\u0026n%enemy% \u00268\u0026o died after popping \u00267\u0026o(\u0026e%pops%\u00267\u0026o) \u00268totems!",
+        "enemy-pop-message": "\u00268\u0026oThe player \u00264%enemy%\u00268\u0026o popped \u00267\u0026o(\u0026e%pops%\u00267\u0026o) \u00268totems!"
       }
     },
     "chat-prefix": {
@@ -760,6 +846,90 @@
         "button": "Right",
         "tape-mode": "Forever"
       }
+    },
+    "sound-on-death": {
+      "id": "sound-on-death",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "sound-volume": 10.0,
+        "sound-pitch": 1.0,
+        "entity-range": 7.5
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "tunnel3x3": {
+      "id": "tunnel3x3",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "miner-mode": true,
+        "reopen-on-disable": false,
+        "module-game-join-disable": false,
+        "module-enabled": false,
+        "recenter-rotation-when-finished": false,
+        "render-blocks": true
+      },
+      "stringEntries": {}
+    },
+    "camera-clip": {
+      "id": "camera-clip",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "camera-distance": 5.0
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "camera-clip": true
+      },
+      "stringEntries": {}
+    },
+    "free-look": {
+      "id": "free-look",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256,
+        "change-perspective-angle": 90
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "change-to-camera-perspective-on-enable": false
+      },
+      "stringEntries": {
+        "camera-perspective": "THIRD_PERSON_FOV"
+      }
+    },
+    "zoom": {
+      "id": "zoom",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256,
+        "zoom-key": 67
+      },
+      "doubleEntries": {
+        "Multiplier.": 0.6
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "scroll-to-change": true
+      },
+      "stringEntries": {}
     },
     "anti-crash": {
       "id": "anti-crash",
@@ -854,13 +1024,90 @@
       "integerEntries": {
         "module-toggle-keybind": 256
       },
+      "doubleEntries": {
+        "time": 0.0
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "trajectories": {
+      "id": "trajectories",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "render-offset": 0.0
+      },
+      "booleanEntries": {
+        "eggs": true,
+        "bows": true,
+        "ender-pearls": true,
+        "snowballs": true,
+        "potions": true,
+        "module-game-join-disable": false,
+        "module-enabled": false,
+        "crossbows": true,
+        "tridents": true
+      },
+      "stringEntries": {}
+    },
+    "pearl-customizer": {
+      "id": "pearl-customizer",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256,
+        "pearl-size": 1
+      },
       "doubleEntries": {},
+      "booleanEntries": {
+        "pearl-sound": false,
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "totem-color": {
+      "id": "totem-color",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "Red": 21.6,
+        "Blue": 17.2,
+        "Alpha": 172.8,
+        "Green": 103.7
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "death-effects": {
+      "id": "death-effects",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256,
+        "rocket-velocity": 1
+      },
+      "doubleEntries": {
+        "Red": 255.0,
+        "Blue": 255.0,
+        "Green": 255.0
+      },
       "booleanEntries": {
         "module-game-join-disable": false,
         "module-enabled": true
       },
       "stringEntries": {
-        "time-mode": "DAY"
+        "effect-type": "THUNDERBOLT",
+        "rocket-shape": "BURST",
+        "entity-selection": "PLAYERS"
       }
     },
     "block-outline": {
@@ -877,22 +1124,6 @@
       "booleanEntries": {
         "module-game-join-disable": false,
         "module-enabled": true
-      },
-      "stringEntries": {}
-    },
-    "camera-clip": {
-      "id": "camera-clip",
-      "objectEntries": {},
-      "integerEntries": {
-        "module-toggle-keybind": 256
-      },
-      "doubleEntries": {
-        "camera-distance": 5.0
-      },
-      "booleanEntries": {
-        "module-game-join-disable": false,
-        "module-enabled": true,
-        "camera-clip": true
       },
       "stringEntries": {}
     },
@@ -981,7 +1212,7 @@
       "doubleEntries": {},
       "booleanEntries": {
         "module-game-join-disable": false,
-        "module-enabled": true
+        "module-enabled": false
       },
       "stringEntries": {}
     },
@@ -1097,23 +1328,6 @@
       },
       "stringEntries": {}
     },
-    "zoom": {
-      "id": "zoom",
-      "objectEntries": {},
-      "integerEntries": {
-        "module-toggle-keybind": 256,
-        "zoom-key": 67
-      },
-      "doubleEntries": {
-        "Multiplier.": 0.6
-      },
-      "booleanEntries": {
-        "module-game-join-disable": false,
-        "module-enabled": true,
-        "scroll-to-change": true
-      },
-      "stringEntries": {}
-    },
     "view-model": {
       "id": "view-model",
       "objectEntries": {},
@@ -1136,7 +1350,7 @@
       },
       "booleanEntries": {
         "module-game-join-disable": false,
-        "module-enabled": true
+        "module-enabled": false
       },
       "stringEntries": {}
     },
@@ -1171,7 +1385,273 @@
         "only-monsters": true,
         "update-per-render": true
       },
+      "stringEntries": {
+        "render-mode": "COMPASS"
+      }
+    },
+    "item-highlight": {
+      "id": "item-highlight",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "Render Type": "BOTH",
+        "Rarity Filter": "UNCOMMON"
+      }
+    },
+    "totem-chams": {
+      "id": "totem-chams",
+      "objectEntries": {},
+      "integerEntries": {
+        "red": 0,
+        "green": 255,
+        "module-toggle-keybind": 256,
+        "blue": 0
+      },
+      "doubleEntries": {
+        "max-velocity": 0.1,
+        "gravity": 0.01,
+        "max-age": 3.0
+      },
+      "booleanEntries": {
+        "show-self": true,
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
       "stringEntries": {}
+    },
+    "discord-screen-disabler": {
+      "id": "discord-screen-disabler",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "infinite-chat": {
+      "id": "infinite-chat",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "cape-disabler": {
+      "id": "cape-disabler",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "disable-capes": true,
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "disable-staff-notifications": true
+      },
+      "stringEntries": {}
+    },
+    "middle-click-ping": {
+      "id": "middle-click-ping",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "loot-keeper": {
+      "id": "loot-keeper",
+      "objectEntries": {},
+      "integerEntries": {
+        "activate-module-bind": 71,
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "list-of-items-to-not-throw": "diamond,netherite,crystals,totem,pearl,sword,elytra,rockets"
+      }
+    },
+    "no-potions-render": {
+      "id": "no-potions-render",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "hit-color": {
+      "id": "hit-color",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {
+        "Red": 17.2,
+        "Blue": 21.6,
+        "Alpha": 75.0,
+        "Green": 255.0
+      },
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {}
+    },
+    "dm-spammer": {
+      "id": "dm-spammer",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256,
+        "delay-ticks": 40
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "ignored": "alex,steve",
+        "message": "Hello there!",
+        "targets": "player1,player2"
+      }
+    },
+    "mod-menu-disabler": {
+      "id": "mod-menu-disabler",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {
+        "mods-id\u0027s": "no-one-addon,clickcrystals"
+      }
+    },
+    "upside-down": {
+      "id": "upside-down",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true
+      },
+      "stringEntries": {
+        "ignore-type": "PLAYERS"
+      }
+    },
+    "prevent": {
+      "id": "prevent",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "disable-placing-glowstone-on-glowstone": false,
+        "disable-placing-anchor-on-anchor": false,
+        "disable-placing-anchor-on-glowstone": false,
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "disable-placing-glowstone": true
+      },
+      "stringEntries": {}
+    },
+    "anti-off-hand": {
+      "id": "anti-off-hand",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": true,
+        "disable-main-hand-swap": false
+      },
+      "stringEntries": {
+        "main-hand-item-list": "crystal,pearl,elytra,armor,sword",
+        "off-hand-item-list": "totem"
+      }
+    },
+    "ghost-interactions": {
+      "id": "ghost-interactions",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {}
+    },
+    "safe-walk": {
+      "id": "safe-walk",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "check-item-name": false,
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "items-to-check": ""
+      }
+    },
+    "name-changer": {
+      "id": "name-changer",
+      "objectEntries": {},
+      "integerEntries": {
+        "module-toggle-keybind": 256
+      },
+      "doubleEntries": {},
+      "booleanEntries": {
+        "module-game-join-disable": false,
+        "module-enabled": false
+      },
+      "stringEntries": {
+        "player-name": "Steve1"
+      }
     }
   }
 }
