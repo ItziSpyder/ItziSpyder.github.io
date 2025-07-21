@@ -3,9 +3,11 @@
 ```
 // @itzispyder
 def module new-kit
-def desc "Spawns a new kit in your inventory with OP commands"
+def desc "Spawns a new kit in your inventory"
 
 on key_press 0 if playing execute_period 0.05 {
+    say "/clear"
+
     // armor
     say "/item replace entity @s armor.head with netherite_helmet[enchantments={protection:4,unbreaking:3,mending:1}]"
     say "/item replace entity @s armor.chest with netherite_chestplate[enchantments={protection:4,unbreaking:3,mending:1}]"
