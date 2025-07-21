@@ -2,6 +2,41 @@
 
 ```
 // @itzispyder
+def module new-kit
+def desc "Spawns a new kit in your inventory with OP commands"
+
+on key_press 0 if playing execute_period 0.05 {
+    // armor
+    say "/item replace entity @s armor.head with netherite_helmet[enchantments={protection:4,unbreaking:3,mending:1}]"
+    say "/item replace entity @s armor.chest with netherite_chestplate[enchantments={protection:4,unbreaking:3,mending:1}]"
+    say "/item replace entity @s armor.legs with netherite_leggings[enchantments={blast_protection:4,unbreaking:3,mending:1}]"
+    say "/item replace entity @s armor.feet with netherite_boots[enchantments={protection:4,unbreaking:3,mending:1}]"
+
+    // offhand
+    say "/item replace entity @s weapon.offhand with totem_of_undying"
+
+    // hotbar
+    say "/give @s netherite_sword[enchantments={sharpness:5,sweeping_edge:3,knockback:1,unbreaking:3,mending:1}]"
+    say "/give @s obsidian 64"
+    say "/give @s end_crystal 64"
+    say "/give @s glowstone 64"
+    say "/give @s respawn_anchor 64"
+    say "/give @s netherite_pickaxe[enchantments={silk_touch:1,efficiency:5,unbreaking:3,mending:1}]"
+    say "/give @s totem_of_undying"
+    say "/give @s golden_apple 64"
+    say "/give @s ender_pearl 16"
+
+    // inventory
+    say "/give @s totem_of_undying 16"
+    say "/give @s experience_bottle 128"
+    say "/give @s end_crystal 128"
+    say "/give @s obsidian 192"
+    say "/give @s ender_pearl 64"
+}
+```
+
+```
+// @itzispyder
 module create tp-auto 
 description Auto accept tpa 
 
