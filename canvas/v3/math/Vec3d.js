@@ -1,4 +1,5 @@
 export class Vec3d {
+    
     x
     y
     z
