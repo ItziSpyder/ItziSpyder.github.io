@@ -1,8 +1,9 @@
 {
   "latest": "1.3.7",
-  "motd": "Revamped turn_to rotator with speed and aim modifiers and a lot of script syntax!",
+  "motd": "Now Supporting 1.21.11! Happy Holidays!",
 
   "versionMappings": {
+    "1.21.11": "1.21.11",
     "1.21.10": "1.21.9",
     "1.21.9": "1.21.9",
     "1.21.8": "1.21.6",
