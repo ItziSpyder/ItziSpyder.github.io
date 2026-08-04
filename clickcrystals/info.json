@@ -1,8 +1,9 @@
 {
-  "latest": "1.4.0",
-  "motd": "Handful of bug patches, replaced annoying sliders with color wheels, and more!",
+  "latest": "1.4.1",
+  "motd": "Now Supporting 26.2!",
 
   "versionMappings": {
+    "26.2": "26.2",
     "26.1.2": "26.1",
     "26.1.1": "26.1",
     "26.1": "26.1",
