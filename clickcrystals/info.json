@@ -1,6 +1,6 @@
 {
-  "latest": "1.4.1",
-  "motd": "Now Supporting 26.2!",
+  "latest": "1.4.2",
+  "motd": "Hotfix for rendering glitches and more!",
 
   "versionMappings": {
     "26.2": "26.2",
